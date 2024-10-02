@@ -14,6 +14,16 @@ p.innerText = `${tg.initDataUnsafe.user.first_name}`;
 
 user.appendChild(p);
 
+let button = document.querySelector('#lang-button');
+let change = document.querySelector('#sublang');
+
+button.addEventListener('click' , function (event) {
+	change.classList.add('opened')
+})
+
+
+console.log(button)
+
 
 
 
