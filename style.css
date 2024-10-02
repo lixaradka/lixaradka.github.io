@@ -102,7 +102,7 @@ body {
 	cursor: pointer;
 }
 
-.lang-button1 {
+.lang-button {
 	width: 120px;
 	height: 30px;
 
@@ -111,19 +111,8 @@ body {
     align-items: center;
 }
 
-.lang-button2 {
-	width: 120px;
-	height: 30px;
-
-	display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.sublang {
+.popup {
 	position: absolute;
-	margin-top: 85px;
-
     display: flex;
     align-items: center;
 	justify-content: center;
@@ -135,13 +124,13 @@ body {
 	color: #E4D8B4;
 	font-size: 20px;
 	cursor: pointer;
-}
-
-.closed {
+	
 	visibility: hidden;
+	margin-top: 85px;
 }
 
-.opened {
+
+.disp {
 	visibility: visible;
 }
 

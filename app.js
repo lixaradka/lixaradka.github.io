@@ -1,28 +1,21 @@
-let tg = window.Telegram.WebApp;
-
-tg.expand();
-
-tg.MainButton.textColor = '#FFFFFF';
-tg.MainButton.color = '#2cab37';
-
-
-let user = document.getElementById("user");
-
-let p = document.createElement("p");
-
-p.innerText = `${tg.initDataUnsafe.user.first_name}`;
-
-user.appendChild(p);
-
 let button = document.querySelector('#lang-button');
-let change = document.querySelector('#sublang');
+let popup = document.querySelector('.popup');
+let disp = document.querySelector('disp')
 
 button.addEventListener('click' , function (event) {
-	change.classList.add('opened')
+	if (popup.classList.contains('disp') == true) {
+		popup.classList.remove('disp')
+	}
+	else {
+		popup.classList.add('disp') 
+	}
 })
 
-
-console.log(button)
+popup.addEventListener('click') , function(event) {
+	if (popup.classList.contains('popup disp') == true) {
+	popup.classList.remove('popup')
+	}
+}
 
 
 
