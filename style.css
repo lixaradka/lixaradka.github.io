@@ -106,6 +106,12 @@ body {
 	width: 120px;
 	height: 30px;
 
+	border-radius: 10px;
+	background-color: #1a1717;
+	color: #E4D8B4;
+	font-size: 20px;
+	cursor: pointer;
+
 	display: flex;
     justify-content: space-between;
     align-items: center;
@@ -130,9 +136,11 @@ body {
 }
 
 
-.disp {
+.disp1 {
 	visibility: visible;
 }
+
+
 
 
 

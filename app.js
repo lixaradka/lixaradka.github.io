@@ -1,21 +1,26 @@
-let button = document.querySelector('#lang-button');
+let toogle = document.querySelector('.lang-toogle');
 let popup = document.querySelector('.popup');
-let disp = document.querySelector('disp')
+let english = document.querySelector('.lang-button')
 
-button.addEventListener('click' , function (event) {
-	if (popup.classList.contains('disp') == true) {
-		popup.classList.remove('disp')
+toogle.addEventListener('click' , function (event) {
+	if (popup.classList.contains('disp1') == true) {
+		popup.classList.remove('disp1')
 	}
 	else {
-		popup.classList.add('disp') 
+		popup.classList.add('disp1') 
 	}
 })
 
-popup.addEventListener('click') , function(event) {
-	if (popup.classList.contains('popup disp') == true) {
-	popup.classList.remove('popup')
+popup.addEventListener('click' , function (event) {
+	if (popup.classList.contains('disp1') == true) {
+		english.classList.add('popup')
+		
+		popup.classList.remove('popup')
+		popup.classList.add('lang-button')
 	}
-}
+})
+
+
 
 
 
