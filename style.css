@@ -1,211 +1,177 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Archivo+Black&family=Londrina+Sketch&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 body {
-	max-width: 390px;
-	height: 700px;
-	margin: 0;
-	padding: 0;
-	font-size: 18px;
-	font-family: 'Abril Fatface';
-	color: #fdf5dd;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
 }
 
-.mini-app {
-	max-width: 390px;
-	height: 700px;
-	background-color: white;
-
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-}
-
-.container {
-	width: 100%;
-    max-width: 350px;
+.wrapper {
+    max-width: 87%;
     margin: 0 auto;
 }
 
-.top { 
-	width: 100%;
-	height: 15%;
-	display: flex;
-	align-items: center;
-	background-color: #161616;
-
-	border-bottom-left-radius: 15px;
-	border-bottom-right-radius: 15px;
+.header {
+    background-color: #313131;
 }
 
-.top-inner {
-	display: flex;
-    justify-content: space-between;
+.header-content {
+    display: flex;
     align-items: center;
-    margin: 30px 0px;
-	height: 60px;
-}
-
-.info {
-	font-size: 5px;
-	cursor: pointer;
-	font-family:'Archivo Black';
-}
-
-#acc {
-	display: flex;
     justify-content: space-between;
 
-    align-items: center;
 }
 
-.user-png {
-	width: 60px;
+.burger {
+    font-size: 35px;
+    padding: 10px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.sidebar {
+    position: fixed;
+    left: -250px; /* Скрываем меню */
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background: #444;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar.open {
+    left: 0; /* Выдвигаем меню */
+}
+
+.close-btn {
+    font-size: 30px;
+    color: white;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 
 .content {
-	max-width: 100%;
-	height: 70%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.slider {
-	width: 270px;
-	height: 337px;
-	position: relative;
-	overflow: hidden;
-	position: absolute;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
-}
-
-.img2 {
-	width: 260px !important;
-	height: 195px !important;
-}
-
-.img3 {
-	width: 225px !important;
-	height: 300px !important;
-}
-
-
-.slider-img{
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	opacity: 0;
-	transition: opacity 0.5s ease;
-}
-
-.slider-img.active {
-	opacity: 1;
-}
-
-.bg-controlls {
-	position: absolute; 
-	left: 0; 
-	display: flex;
-	align-items: center; 
-	width:60px; 
-	height: 300px; 
-	background-color: rgb(121, 121, 121);
-	opacity: 0.5;
-}
-
-.bg-controlls-right {
-	position: absolute; 
-	display: flex;
-	align-items: center; 
-	width:60px; 
-	height: 300px; 
-	background-color: rgb(121, 121, 121);
-	opacity: 0.5;
-	margin-left: 325px;
-}
-
-
-.controlls img {
-	margin: 0 auto;
-}
-
-
-.footer {
-	width: 100%;
-	height: 105px;
-	background-color: #272324;
-}
-
-.footer_content {
-	height: 105px;
-	display: flex;
-    justify-content: space-between;
-	align-items: center;
-    margin: 0 auto;
-	font-family: 'Courier New', Courier, monospace;
-	font-weight: 600;
-}
-
-.container-ft {
-	width: 100%;
-    max-width: 320px;
-    margin: 0 auto;
-}
-
-.content-ft {
-	padding-top: 10px;
-    width: 90px;
-    height: 80px;
-    text-align: center;
-	border-radius: 15px;
-}
-
-.img-text {
-	padding-top: 8px;
-}
-
-.on {
-	background-color: #ccbfbf;
-	color: black !important;
-}
-
-.lang-toogle {
-	display: flex;
-    align-items: center;
-	justify-content: space-between;
-	width: 140px;
-	height: 40px;
-}
-
-.lang-button {
-	font-family: 'Abril Fatface';
-	width: 60px;
-	height: 40px;
-
-	border-radius: 10px;
-	font-size: 20px;
-	font-weight: bolder;
-	cursor: pointer;
-
-	display: flex;
+    width: 100%;
+    height:  640px;
+    display: flex;
     justify-content: center;
-	align-items: center;
+    flex-wrap: wrap;
+}
 
-	border: 1px solid darkgray;
+.logo {
+    margin-top: 50px;
+    width: 350px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(255, 255, 255);
+    color: #ffffff;
+}
+
+.content-title {
+    margin-top: 10px;
+    width: 300px;
+    height: 130px;
+    color: rgb(255, 255, 255);
+}
+
+.title {
+    font-family: 'Lobster';
+    font-size: 40px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.catalog {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 390px; 
+    margin: auto; 
+}
+
+.catalog-item {
+    display: flex;
+    flex-direction: column; /* Располагаем элементы по вертикали */
+    justify-content: space-between; /* Раздвигаем элементы */
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    max-width: 120px;
+    margin: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.content-title {
+    opacity: 0; /* Скрываем заголовок по умолчанию */
+    transform: translateX(-100px); /* Сдвиг влево */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Плавный переход */
+}
+.content-title.show {
+    opacity: 1; /* Показываем заголовок */
+    transform: translateX(0); /* Возвращаем на место */
+}
+.catalog-item {
+    opacity: 0; /* Скрываем элементы каталога по умолчанию */
+    transform: translateY(50px); /* Сдвиг вниз */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Плавный переход */
+}
+.catalog-item.show {
+    opacity: 1; /* Показываем элементы */
+    transform: translateY(0); /* Возвращаем на место */
 }
 
 
+.catalog-item img {
+    display: block;
+    margin: 0 auto;
+}
 
+.catalog-item h2 {
+    margin: 0 0 5px;
+    font-size: 16px;
+    color: #333;
+}
 
+.catalog-item p {
+    font-size: 12px;
+    color: #666;
+    padding-left: 12px;
+}
 
-
-
-
-
-
+.info-btn {
+    width: 90px;
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    display: block;
+    margin: 0 auto;
+}
 
 

@@ -1,88 +1,65 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style.css">
-	<title>Document</title>
-</head> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
 <body>
-	<div class="mini-app">
-		<div class="top">
-			<div class="container">
-			<div class="top-inner">
-				<div class="item">
-					<div class="info" id="acc">
-					 <div style="font-size: 23px;" id="user">[palmen logo]</div>
-				</div>
-				</div>
-	
-						<div class="lang-toogle">
-							<div class="lang-button" id="en">
-							  EN
-							</div>
-	
-	
-								<div class="lang-button" id="ru">
-									<div class="lang-text">RU</div>
-								</div>
-							</div>
-						</div>
-			
+    <div class="mini-app">
+        <div class="header">
+            <div class="wrapper">
+                <div class="header-content">
+                    <div class="burger" id="burger">&#9776;</div>
+                    <nav class="sidebar" id="sidebar">
+                        <button class="close-btn" id="close-btn">&times;</button>
+                        <ul>
+                            <li><a href="#" class="nav-home" id="catalog-link">Home</a></li>
+                            <li><a href="#" class="nav-about" id="about-link">About Us</a></li>
+                            <li><a href="#" class="nav-services" id="services-link">Services</a></li>
+                            <li><a href="#" class="nav-contacts" id="contacts-link">Contacts</a></li>
+                        </ul>
+                    </nav>
+					<div class="language">
+						<select id="language-select">
+							<option value="en" selected>English</option>
+							<option value="ru">Русский</option>
+						</select>
+					</div>
+                </div>
+            </div>
+        </div>
 
-			
-			
-						
+        <div class="content">
+            <div class="logo">logo gif</div>
+            <div class="content-title">
+                <div class="title" id="main-title">Fashion is what matters</div>
+            </div>
 
-		</div>
-	</div>
+            <div class="catalog">
+                <div class="catalog-item">
+                    <img style="margin: 0 auto;" src="/img/casio-logo.PNG" alt="">
+                    <p class="catalog-description" id="clock1-title" data-en="Reliable and functional watches." data-ru="Надежные и функциональные часы.">Reliable and functional watches.</p>
+                    <button class="info-btn" id="buy-button1">Buy</button>
+                </div>
+                <div class="catalog-item">
+                    <img style="width: 115px;" src="/img/tissot-logo.PNG" alt="">
+                    <p class="catalog-description" id="clock2-title" data-en="Swiss quality and style." data-ru="Швейцарское качество и стиль.">Swiss quality and style.</p>
+                    <button class="info-btn" id="buy-button2">Buy</button>
+                </div>
+                <div class="catalog-item">
+                    <img style="width: 96px;" src="/img/omega-logo.PNG" alt="">
+                    <p class="catalog-description" id="clock3-title" data-en="Icon of style and precision.">Icon of style and precision.</p>
+                    <button class="info-btn" id="buy-button3">Buy</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-	<div class="content">
-			<div class="slider">
-					<img class="slider-img" src="/img//casio1.jpg" alt="">
-					<img class="slider-img img2" src="/img/casio2.jpg" alt="">
-					<img class="slider-img img3" src="/img/casio3.png" alt="">
-		</div>
-		<div class="bg-controlls prev controlls">
-			<img style="opacity: 1;height: 25px;" class="prev controlls" src="/img/left.png" alt="">
-		</div>
-		<div class="bg-controlls-right next controlls">
-			<img style="opacity: 1;height: 25px;" class="next controlls" src="/img/right.png" alt="">
-			</div>
-			</div>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="app.js"></script>
 
-	<div class="footer">
-		<div class="container-ft">
-			<div class="footer_content">
-				<div class="footer-btn">
-		<div class="content-ft" id="home">
-			<img src="/img/home.png" alt="">
-		<div class="img-text">
-			Home
-		</div>
-	</div>
-	</div>
-
-	<div class="content-ft">
-		<img src="/img/bag.png" alt="">
-	<div class="img-text">
-		Buy
-	</div>
-</div>
-
-<div class="content-ft">
-	<img src="/img/electric.png" alt="">
-<div class="img-text">
-	Support
-</div>
-</div>	
-	</div>
-	</div>
-	</div>
- </div>
-
-
-
-	<script src="https://telegram.org/js/telegram-web-app.js"></script>
-	<script src="app.js"></script>
 </body>
+</html>

@@ -1,39 +1,79 @@
-let eng = document.querySelector('#en')
-let homeBtn = document.querySelector('#home')
+const burger = document.getElementById('burger');
+const sidebar = document.getElementById('sidebar');
+const closeBtn = document.getElementById('close-btn');
 
-let images = document.querySelectorAll('.slider-img')
-let controlls = document.querySelectorAll('.controlls')
-let imgIndex = 0;
+burger.addEventListener('click', () => {
+    sidebar.classList.toggle('open'); // Открываем меню
+});
 
-function show(index) {
-    images[imgIndex].classList.remove('active');
-    images[index].classList.add('active');
-    imgIndex = index
+closeBtn.addEventListener('click', () => {
+    sidebar.classList.remove('open'); // Закрываем меню
+});
+
+
+const translations = {
+    en: {
+        "catalog-link": "Home",
+        "about-link": "About Us",
+        "services-link": "Services",
+        "contacts-link": "Contacts",
+        "main-title": "Fashion is what matters",
+        "clock1-title": "Reliable and functional watches.",
+        "clock2-title": "Swiss quality and style.",
+        "clock3-title": "Icon of style and precision.",
+        "buy-button1": "Buy",
+        "buy-button2": "Buy",
+        "buy-button3": "Buy",
+    },
+    ru: {
+        "catalog-link": "Главная",
+        "about-link": "О нас",
+        "services-link": "Услуги",
+        "contacts-link": "Контакты",
+        "main-title": "Мода - вот что важно",
+        "clock1-title": "Надежные и функциональные часы.",
+        "clock2-title": "Швейцарское качество и стиль.",
+        "clock3-title": "Икона стиля и точности.",
+        "buy-button1": "Купить",
+        "buy-button2": "Купить",
+        "buy-button3": "Купить",
+    }
+};
+
+// Функция для обновления текста на странице
+function updateText(language) {
+    const lang = translations[language];
+    document.getElementById('main-title').textContent = lang["main-title"];
+    document.getElementById('catalog-link').textContent = lang["catalog-link"];
+    document.getElementById('about-link').textContent = lang["about-link"];
+    document.getElementById('services-link').textContent = lang["services-link"];
+    document.getElementById('contacts-link').textContent = lang["contacts-link"];
+    document.querySelectorAll('.catalog-description').forEach((el) => {
+        const id = el.getAttribute('id');
+        el.textContent = lang[id] || el.textContent;
+    });
+    document.getElementById('buy-button1').textContent = lang["buy-button1"];
+    document.getElementById('buy-button2').textContent = lang["buy-button2"];
+    document.getElementById('buy-button3').textContent = lang["buy-button3"];
 }
 
-controlls.forEach((e) => {
-    e.addEventListener('click', () => {
-        if (event.target.classList.contains('prev')) {
-            let index = imgIndex - 1;
+// Устанавливаем начальный язык
+updateText('en');
 
-            if(index < 0) {
-                index = images.length - 1;
-            }
-            show(index);
-        } else if (event.target.classList.contains('next')) {
-            let index = imgIndex + 1;
-            if (index >= images.length) {
-                index = 0;
-            }
-            show(index);
-        }
-    })
-})
+document.getElementById('language-select').addEventListener('change', function() {
+    updateText(this.value);
+});
 
-show(imgIndex)
+window.onload = function() {
+    const mainTitle = document.getElementById('main-title');
+    const contentTitle = mainTitle.parentElement;
+    contentTitle.classList.add('show');
 
-
-
-homeBtn.classList.add('on')
-eng.classList.add('on')
-console.log(homeBtn)
+    // Появление элементов каталога
+    const items = document.querySelectorAll('.catalog-item');
+    items.forEach((item, index) => {
+        setTimeout(() => {
+            item.classList.add('show');
+        }, index * 200); // Задержка для каждой карточки
+    });
+};
