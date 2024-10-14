@@ -68,12 +68,27 @@ window.onload = function() {
     const mainTitle = document.getElementById('main-title');
     const contentTitle = mainTitle.parentElement;
     contentTitle.classList.add('show');
+};
 
-    // Появление элементов каталога
-    const items = document.querySelectorAll('.catalog-item');
-    items.forEach((item, index) => {
-        setTimeout(() => {
-            item.classList.add('show');
-        }, index * 200); // Задержка для каждой карточки
+
+const items = document.querySelectorAll('.catalog-item');
+
+const options = {
+    root: null, 
+    rootMargin: '0px',
+    threshold: 0.1 
+};
+
+const callback = (entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            observer.unobserve(entry.target); 
+        }
     });
 };
+
+const observer = new IntersectionObserver(callback, options);
+items.forEach(item => {
+    observer.observe(item); 
+});
