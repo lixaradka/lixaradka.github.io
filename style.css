@@ -149,16 +149,9 @@ body {
     margin: 0 auto;
 }
 
-.catalog-item h2 {
-    margin: 0 0 5px;
-    font-size: 16px;
-    color: #333;
-}
-
 .catalog-item p {
     font-size: 12px;
     color: #666;
-    padding-left: 12px;
 }
 
 .info-btn {

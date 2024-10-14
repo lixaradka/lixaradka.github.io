@@ -74,9 +74,9 @@ window.onload = function() {
 const items = document.querySelectorAll('.catalog-item');
 
 const options = {
-    root: null, 
+    root: null, // viewport
     rootMargin: '0px',
-    threshold: 0.1 
+    threshold: 0.01 // Появление при 5% видимости
 };
 
 const callback = (entries, observer) => {
