@@ -10,7 +10,6 @@ closeBtn.addEventListener('click', () => {
     sidebar.classList.remove('open'); // Закрываем меню
 });
 
-
 const translations = {
     en: {
         "catalog-link": "Home",
@@ -71,19 +70,21 @@ window.onload = function() {
 };
 
 
-const items = document.querySelectorAll('.catalog-item');
 
+const items = document.querySelectorAll('.catalog-item');
 const options = {
     root: null, // viewport
     rootMargin: '0px',
-    threshold: 0.01 // Появление при 5% видимости
+    threshold: 0 // Появление при первой видимости
 };
 
 const callback = (entries, observer) => {
-    entries.forEach(entry => {
+    entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-            observer.unobserve(entry.target); 
+            setTimeout(() => {
+                entry.target.classList.add('show');
+            }, index * 200); // Задержка для каждого элемента
+            observer.unobserve(entry.target); // Отключаем наблюдение после появления
         }
     });
 };
@@ -92,3 +93,12 @@ const observer = new IntersectionObserver(callback, options);
 items.forEach(item => {
     observer.observe(item); 
 });
+
+// Дополнительный обработчик для последнего элемента
+window.addEventListener('load', () => {
+    const lastItem = items[items.length - 1];
+    setTimeout(() => {
+        lastItem.classList.add('show');
+    }, items.length * 200); // Задержка, равная времени появления всех предыдущих элементов
+});
+
